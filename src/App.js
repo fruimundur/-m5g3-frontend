@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import MakeBlog from "./components/MakeBlog";
+import ViewBlog from "./components/ViewBlog";
 
-function App() {
+const App = () => {
+  const [route, setRoute] = useState("makeBlog");
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={()=>setRoute("makeBlog")}>makeBlog</button>
+      <button onClick={()=>setRoute("wiewBlog")}>wiewBlog</button>
+      {route==="makeBlog" && <MakeBlog/> }
+      {route==="makeBlog" && <ViewBlog/> }
     </div>
-  );
+  )
 }
-
 export default App;
