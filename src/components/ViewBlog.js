@@ -6,7 +6,7 @@ export default ()=> {
   const [showForm, setshowForm] = useState({})
   useEffect(()=>{
     const getData = async ()=>{
-      const response = await fetch('http://localhost:5002');
+      const response = await fetch('https://m5g3-backend-8h1pcjxz9-fruimundur.vercel.app/');
       const data = await response.json();
       console.log(data);
       setBlogs(data);
